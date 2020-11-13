@@ -250,6 +250,12 @@ section.steps {
         }
 }
 
+@media screen and (max-width: 768px) {
+    .step p {
+        display: none;
+    }
+}
+
 section .pool {
     background-image: url(../img/pool.png);
     background-size: 100% 100%;
