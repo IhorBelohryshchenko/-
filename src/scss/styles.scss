@@ -1,15 +1,8 @@
 header {
     background-image: url(../img/header.png);
-    background-size: 100% 100%;
-    min-height: 100vh;
     background-repeat: no-repeat;
-}
-
-@media screen and (max-width: 768px) {
-    header {
-        background-size: 100% 74%;
-        margin-bottom: -11em;
-    }
+    background-size: cover;
+    align-items: center;
 }
 
 header .head {
@@ -52,11 +45,13 @@ header .search {
             justify-content: center;
             text-align: center;
             letter-spacing: 0.3em;
+            padding: 1em 0;
         }
         & input:focus {
             outline: none;
         }
         & button {
+            width: 10em;
             border: none;
             display: flex;
             flex-flow: row nowrap;
@@ -79,8 +74,25 @@ header .search {
 }
 
 @media screen and (max-width: 768px) {
-    header .search input {
-        display: none;
+    header .search {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+            & button {
+                padding: 0;
+                font-size: 0.8em;
+                border: none;
+            }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    header .search {
+        & input {
+            display: none;
+        }
     }
 }
 
@@ -97,7 +109,7 @@ header .scroll {
         }
 }
 
-header .panel {
+ .panel {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -108,7 +120,20 @@ header .panel {
 }
 
 @media screen and (max-width: 768px) {
-    header .panel {
+    .panel {
+        display: flex;
+        justify-content: center;
+        flex-flow: column wrap;
+        margin: 0;
+        padding: 0;
+    }
+    .logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .panel {
         display: flex;
         justify-content: center;
         flex-flow: column wrap;
@@ -117,28 +142,39 @@ header .panel {
     }
 }
 
-header .logo {
+.logo {
     font-size: 1.5em;
     letter-spacing: 0.1em;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: bold;
+    color: white;
 }
 
-header .menu__list {
+.menu__list {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     list-style: none;
+    color: white;
         & li {
             padding-left: 2em;
         }
 }
 
-@media screen and (max-width: 768px) {
-    header .logo {
-        display: none;
+.menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 425px) {
+    .menu-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
-    header .menu__list {
+}
+
+@media screen and (max-width: 768px) {
+    .menu__list {
         display: flex;
         flex-flow: column wrap;
         justify-content: center;
@@ -147,40 +183,31 @@ header .menu__list {
     }
 }
 
+@media screen and (max-width: 425px) {
+    .menu__list {
+        display: none;
+    }
+}
+
 section.article {
     background-image: url(../img/choose.png);
-    background-size: 100% 100%;
-    min-height: 100vh;
+    background-size: cover;
     background-repeat: no-repeat;
-    position: relative;
 }
 
 section .block {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
     padding: 0 10%;
-}
-
-@media screen and (max-width: 768px) {
-    section .block {
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        margin: 0;
-        padding-bottom: 5em;
-        padding-left: 0;
-        padding-right: 0;
-        text-align: center;
-    }
 }
 
 section .left {
     display: flex;
     flex-flow: column nowrap;
+    float: left;
     width: 35%;
-    padding-top: 15%;
+    padding-top: 10%;
+    padding-bottom: 5%;
         &__title {
             color: white;
             font-size: 2em;
@@ -209,12 +236,43 @@ section .left {
 section .right {
     display: flex;
     flex-flow: column nowrap;
-    padding-top: 30%;
+    justify-content: center;
+    float: right;
+    width: 65%;
+    padding-top: 10%;
+    padding-bottom: 10%;
         &__villa {
-            position: absolute;
-            top: 8em;
-            right: 20em;
+            width: 50%;
+            padding-left: 30%;
+            padding-bottom: 1%;
         }
+        &__mountains {
+            width: 50%;
+            padding-left: 50%;
+        }
+}
+
+@media screen and (max-width: 768px) {
+    section .block {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        margin: 0;
+        padding-bottom: 5em;
+        text-align: center;
+        align-items: center;
+        padding: 0;
+    }
+    section .left {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 50%;
+        padding: 0;
+        margin: 0;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -225,9 +283,13 @@ section .right {
         align-items: center;
         padding-top: 1em;
         margin: 0;
+        width: 100%;
             &__villa {
-                display: none;
-            }     
+                padding: 0;
+            }
+            &__mountains {
+                padding: 0;
+            }
     }
 }
 
@@ -251,15 +313,29 @@ section.steps {
 }
 
 @media screen and (max-width: 768px) {
+    section.steps {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+    }
+    section.steps .step {
+        padding: 1em;
+    }
+}
+
+@media screen and (max-width: 425px) {
     .step p {
         display: none;
+    }
+    section.steps {
+        display: flex;
+        flex-flow: row nowrap;
     }
 }
 
 section .pool {
     background-image: url(../img/pool.png);
-    background-size: 100% 100%;
-    min-height: 100vh;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -314,8 +390,7 @@ section .items {
 
 section .sea {
     background-image: url(../img/mountains.png);
-    background-size: 100% 100%;
-    min-height: 100vh;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -339,8 +414,7 @@ section .container2 {
 
 section.reviews {
     background-image: url(../img/chel1.png);
-    background-size: 100% 100%;
-    min-height: 100vh;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -361,19 +435,6 @@ section .review {
     margin: 0 auto;
 }
 
-@media screen and (max-width: 768px) {
-    section .comment {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
-            &__image {
-                display: none;
-            }
-    }
-}
-
 section .comment {
     display: flex;
     flex-flow: row nowrap;
@@ -381,17 +442,17 @@ section .comment {
     width: 100%;
     padding: 0;
         &__image {
-            width: 30%;
+            width: 35%;
         }
         & img {
-            max-width: 100%;
-            max-height: 100%;
+            width: 100%;
+            height: 100%;
         }
         &__text {
             background-color: #333333;
             padding: 2.5em;
             color: white;
-            width: 63%;
+            width: 65%;
             margin: 0;
                 &--name {
                     font-size: 1.3em;
@@ -411,6 +472,46 @@ section .comment {
                     font-family: 'Permanent Marker', cursive;
                 }
         }
+}
+
+@media screen and (max-width: 768px) {
+    section .comment {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+            &__image {
+                display: flex;
+                margin: 0;
+                min-width: 78%;
+            }
+            &__text {
+                margin: 0;
+            }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    section .comment {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+            &__image {
+                display: flex;
+                margin: 0;
+                min-width: 90%;
+            }
+            &__text {
+                margin: 0;
+            }
+    }
 }
 
 footer {
