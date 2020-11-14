@@ -92,7 +92,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'My Beets App',
-      template: './src/index.html'
+      template: './src/index.html',
+      favicon: './src/img/star.png'
     }),
     new webpack.ProvidePlugin({
       '$': 'jquery'
